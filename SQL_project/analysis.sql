@@ -146,8 +146,9 @@ WHERE model_year = 1974
 GROUP BY model, brand
 ORDER BY ma DESC ;
 
------------------------
--- Concluding Insights
+-----------------------*************************************---------------------------
+
+-- Concluding Insights and rough quaries
 
 SELECT brand,
     count(*) as brand_count
@@ -240,5 +241,17 @@ SELECT
     brand,
     count(*) as counti
 FROM used_cars
-where brand = 'Ford'
-GROUP BY brand;
+GROUP BY brand
+ORDER BY counti DESC;
+
+SELECT
+    brand,
+    COUNT(*) AS vehicles_listed,
+    ROUND(
+        (PERCENTILE_CONT(0.5)
+        WITHIN GROUP (ORDER BY price))::numeric,
+        2
+    ) AS median_price
+FROM used_cars
+GROUP BY brand
+ORDER BY vehicles_listed DESC;
