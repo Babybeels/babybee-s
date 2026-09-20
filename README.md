@@ -10,7 +10,7 @@ The objective of this project is to Analyze used-car listings using PostgreSQL t
 |Table|used_cars|
 |Rows|188,533|
 |Columns|9|
-|Key Fields|ID, Brand, Model, Model_year, Mileage, Fuel_type,Engine, Accident, Price|
+|Key Fields|ID, Brand, Model, Model_year, Mileage, Fuel_type,Engine, Transmission, EXT_col, INT_col, Clean_Title, Accident, Price|
 
 ## 🛠️ Tools Used & Skills Demonstrated
 ### 🧰 Tools Used
